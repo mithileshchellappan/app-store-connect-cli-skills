@@ -25,6 +25,7 @@ Define and run repo-local automation graphs using `asc workflow` and `.asc/workf
 - You need multi-step orchestration with machine-parseable JSON output for CI/agents
 - You need hooks (`before_all`, `after_all`, `error`), conditionals (`if`), and private helper sub-workflows
 - You want validation (`asc workflow validate`) with cycle/reference checks before execution
+- You want an explicit schema with naming/step constraints that fail fast in CI
 
 ### asc-app-create-ui
 

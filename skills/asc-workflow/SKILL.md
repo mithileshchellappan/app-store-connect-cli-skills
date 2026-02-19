@@ -66,6 +66,7 @@ Workflow keys:
 - `private` (not directly runnable)
 - `env`
 - `steps`
+- Workflow names must start with a letter and may contain only letters, digits, hyphens, and underscores.
 
 Step forms:
 - String shorthand: `"echo hello"` -> run step
@@ -75,6 +76,8 @@ Step forms:
   - `name`: label for reporting
   - `if`: conditional var name
   - `with`: env overrides for workflow-call steps only
+- Each step must define exactly one action: `run` or `workflow` (not both, not neither).
+- `with` is valid only on workflow-call steps.
 
 ## Runtime params (`KEY:VALUE` / `KEY=VALUE`)
 
@@ -138,6 +141,7 @@ Sub-workflow call step (`"workflow": "...", "with": {...}`):
 
 - `asc workflow run --dry-run <name>` does not execute commands.
 - It prints previews to `stderr`.
+- Hooks (`before_all`, `after_all`, `error`) are previewed only; they are not executed in dry-run.
 - Dry-run shows raw commands (without env expansion), which helps avoid secret leakage in previews.
 
 ## Shell behavior
