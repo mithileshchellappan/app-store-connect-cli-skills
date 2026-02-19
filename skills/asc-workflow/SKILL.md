@@ -36,7 +36,9 @@ This feature is best for deterministic automation that lives in your repo, is re
 ## File location and format
 
 - Default path: `.asc/workflow.json`
-- Override path: `asc workflow run --file ./path/to/workflow.json <name>`
+- Override path for run: `asc workflow run --file ./path/to/workflow.json <name>`
+- Override path for validate: `asc workflow validate --file ./path/to/workflow.json`
+- Override path for list: `asc workflow list --file ./path/to/workflow.json`
 - JSONC comments are supported (`//` and `/* ... */`)
 
 ## Output and CI contract
